@@ -1,30 +1,24 @@
 package br.com.missionsst.jpa.testes;
 
-import br.com.missionsst.jpa.model.Produto;
+import br.com.missionsst.jpa.model.Vendedor;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.sql.SQLException;
 
-public class TesteProdutos extends SQLException {
-
-    public static void main(String[] args)  {
-        Produto p = new Produto();
-
-        p.setDescricao("Teste JPA");
-        p.setPreco(1.45f);
-
+public class TesteVendedor extends SQLException {
+    public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Pedidos_PU");
-
         EntityManager em = emf.createEntityManager();
 
+        Vendedor vendedor = new Vendedor("Jose Vendedor", (double) 5, (double) 2000);
+
         em.getTransaction().begin();
-        em.persist(p);
+        em.persist(vendedor);
         em.getTransaction().commit();
 
         em.close();
         emf.close();
     }
-
 }

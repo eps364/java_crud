@@ -13,19 +13,32 @@ public class Cliente {
   private String nomeCliente;
   private String endereco;
   private String cidade;
-  private String cep;
   private String uf;
+  private String cep;
   private String cpfCnpj;
   private String ie;
-  private String limiteCompra;
-  private String estado;
+  private Double limiteCompra;
+
+  public Cliente(){}
+
+  public Cliente(String nomeCliente, String endereco, String cidade, String cep, String uf, String cpfCnpj, String ie, Double limiteCompra) {
+    this.nomeCliente = nomeCliente;
+    this.endereco = endereco;
+    this.cidade = cidade;
+    this.cep = cep;
+    this.uf = uf;
+    this.cpfCnpj = cpfCnpj;
+    this.ie = ie;
+    this.limiteCompra = limiteCompra;
+  }
+
 
 
   public Long getCodCliente() {
     return codCliente;
   }
 
-  public void setCodCliente(Long codCliente) {
+  public void setCodCliente(long codCliente) {
     this.codCliente = codCliente;
   }
 
@@ -93,21 +106,12 @@ public class Cliente {
   }
 
 
-  public String getLimiteCompra() {
+  public Double getLimiteCompra() {
     return limiteCompra;
   }
 
-  public void setLimiteCompra(String limiteCompra) {
+  public void setLimiteCompra(Double limiteCompra) {
     this.limiteCompra = limiteCompra;
-  }
-
-
-  public String getEstado() {
-    return estado;
-  }
-
-  public void setEstado(String estado) {
-    this.estado = estado;
   }
 
 }

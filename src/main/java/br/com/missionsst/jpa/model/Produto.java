@@ -9,22 +9,23 @@ import javax.persistence.Id;
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int codigo;
+    private Long codigo;
 
     private String descricao;
     private Float preco;
 
-//    public Produto(int codigo, String descricao, Float preco) {
-//        this.codigo = codigo;
-//        this.descricao = descricao;
-//        this.preco = preco;
-//    }
+    public Produto(){}
 
-    public int getCodigo() {
+    public Produto(String descricao, Float preco) {
+        this.descricao = descricao;
+        this.preco = preco;
+    }
+
+    public Long getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(Long codigo) {
         this.codigo = codigo;
     }
 

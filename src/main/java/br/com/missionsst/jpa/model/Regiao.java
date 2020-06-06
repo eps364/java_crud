@@ -12,6 +12,11 @@ public class Regiao {
   private Long codRegiao;
   private String nomeRegiao;
 
+  public Regiao(){}
+
+  public Regiao(String nomeRegiao) {
+    this.nomeRegiao = nomeRegiao;
+  }
 
   public Long getCodRegiao() {
     return codRegiao;

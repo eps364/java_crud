@@ -1,17 +1,16 @@
 package br.com.missionsst.jpa.model;
 
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
 public class Departamento {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long codDepartamento;
   private String nomeDepartamento;
-  private Long codRegiao;
-
+  @ManyToOne
+  private Regiao codRegiao;
 
   public Long getCodDepartamento() {
     return codDepartamento;
@@ -21,7 +20,6 @@ public class Departamento {
     this.codDepartamento = codDepartamento;
   }
 
-
   public String getNomeDepartamento() {
     return nomeDepartamento;
   }
@@ -30,13 +28,11 @@ public class Departamento {
     this.nomeDepartamento = nomeDepartamento;
   }
 
-
-  public Long getCodRegiao() {
+  public Regiao getCodRegiao() {
     return codRegiao;
   }
 
-  public void setCodRegiao(Long codRegiao) {
+  public void setCodRegiao(Regiao codRegiao) {
     this.codRegiao = codRegiao;
   }
-
 }

@@ -11,8 +11,17 @@ public class Vendedor {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long codVendedor;
   private String nomeVendedor;
-  private String faixaComissao;
-  private String salarioFixo;
+  private Double faixaComissao;
+  private Double salarioFixo;
+
+  public Vendedor(){}
+
+  public Vendedor(String nomeVendedor, Double faixaComissao, Double salarioFixo) {
+    this.nomeVendedor = nomeVendedor;
+    this.faixaComissao = faixaComissao;
+    this.salarioFixo = salarioFixo;
+  }
+
 
 
   public Long getCodVendedor() {
@@ -33,20 +42,20 @@ public class Vendedor {
   }
 
 
-  public String getFaixaComissao() {
+  public Double getFaixaComissao() {
     return faixaComissao;
   }
 
-  public void setFaixaComissao(String faixaComissao) {
+  public void setFaixaComissao(Double faixaComissao) {
     this.faixaComissao = faixaComissao;
   }
 
 
-  public String getSalarioFixo() {
+  public Double getSalarioFixo() {
     return salarioFixo;
   }
 
-  public void setSalarioFixo(String salarioFixo) {
+  public void setSalarioFixo(Double salarioFixo) {
     this.salarioFixo = salarioFixo;
   }
 
