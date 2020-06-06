@@ -1,4 +1,4 @@
-package br.com.missionsst.modal.bean;
+package br.com.missionsst.jpa.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

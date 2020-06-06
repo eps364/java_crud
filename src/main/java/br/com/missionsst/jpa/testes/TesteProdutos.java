@@ -1,20 +1,21 @@
-package br.com.missionsst.testes;
+package br.com.missionsst.jpa.testes;
 
-import br.com.missionsst.modal.bean.Produto;
+import br.com.missionsst.jpa.model.Produto;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.sql.SQLException;
 
-public class TesteProdutos {
+public class TesteProdutos extends SQLException {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         Produto p = new Produto();
 
         p.setDescricao("Teste JPA");
         p.setPreco(1.45f);
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("MyConnection");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Pedidos_PU");
 
         EntityManager em = emf.createEntityManager();
 

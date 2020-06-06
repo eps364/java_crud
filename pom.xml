@@ -4,30 +4,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>br.com.missionsst.java_crud</groupId>
-    <artifactId>java_crud</artifactId>
+    <groupId>br.com.missionsst.jpa</groupId>
+    <artifactId>java-jpa</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <dependencies>
+        <!-- Hibernate -->
         <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <version>8.3.1.jre14-preview</version>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-agroal</artifactId>
+            <version>5.4.16.Final</version>
+            <type>pom</type>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.20</version>
+            <version>8.0.18</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-agroal</artifactId>
-            <version>5.4.17.Final</version>
-            <type>pom</type>
-        </dependency>
+
     </dependencies>
 
 </project>
