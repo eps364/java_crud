@@ -14,7 +14,8 @@ public class Produto {
     private String descricao;
     private Float preco;
 
-    public Produto(){}
+    public Produto() {
+    }
 
     public Produto(String descricao, Float preco) {
         this.descricao = descricao;

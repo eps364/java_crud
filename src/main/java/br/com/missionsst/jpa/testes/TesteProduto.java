@@ -13,7 +13,7 @@ public class TesteProduto extends SQLException {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Pedidos_PU");
         EntityManager em = emf.createEntityManager();
 
-        Produto produto = new Produto("Teclado", (float) 30.25 );
+        Produto produto = new Produto("Notebook", (float) 3000.25 );
 
         em.getTransaction().begin();
         em.persist(produto);

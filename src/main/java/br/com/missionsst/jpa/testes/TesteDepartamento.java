@@ -18,7 +18,7 @@ public class TesteDepartamento extends SQLException {
 
 
         Departamento departamento = new Departamento();
-        departamento.setNomeDepartamento("Informatica");
+        departamento.setNomeDepartamento("Financeiro");
         departamento.setCodRegiao(regiao);
 
         em.getTransaction().begin();

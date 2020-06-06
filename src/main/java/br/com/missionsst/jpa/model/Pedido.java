@@ -1,20 +1,30 @@
 package br.com.missionsst.jpa.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Pedido {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long numPedido;
-  private java.sql.Timestamp dataCompra;
-  private java.sql.Timestamp dataEntrega;
-  private Long codCliente;
-  private Long codVendedor;
+  private Date dataCompra;
+  private Date dataEntrega;
 
+  @ManyToOne
+  private Cliente codCliente;
+  @ManyToOne
+  private Vendedor codVendedor;
+
+  public Pedido() {
+  }
+
+  public Pedido(Date dataCompra, Date dataEntrega, Cliente codCliente, Vendedor codVendedor) {
+    this.dataCompra = dataCompra;
+    this.dataEntrega = dataEntrega;
+    this.codCliente = codCliente;
+    this.codVendedor = codVendedor;
+  }
 
   public Long getNumPedido() {
     return numPedido;
@@ -25,16 +35,16 @@ public class Pedido {
   }
 
 
-  public java.sql.Timestamp getDataCompra() {
+  public Date getDataCompra() {
     return dataCompra;
   }
 
-  public void setDataCompra(java.sql.Timestamp dataCompra) {
+  public void setDataCompra(Date dataCompra) {
     this.dataCompra = dataCompra;
   }
 
 
-  public java.sql.Timestamp getDataEntrega() {
+  public Date getDataEntrega() {
     return dataEntrega;
   }
 
@@ -43,20 +53,20 @@ public class Pedido {
   }
 
 
-  public Long getCodCliente() {
+  public Cliente getCodCliente() {
     return codCliente;
   }
 
-  public void setCodCliente(Long codCliente) {
+  public void setCodCliente(Cliente codCliente) {
     this.codCliente = codCliente;
   }
 
 
-  public Long getCodVendedor() {
+  public Vendedor getCodVendedor() {
     return codVendedor;
   }
 
-  public void setCodVendedor(Long codVendedor) {
+  public void setCodVendedor(Vendedor codVendedor) {
     this.codVendedor = codVendedor;
   }
 
